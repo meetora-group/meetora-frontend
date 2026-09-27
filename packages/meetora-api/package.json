@@ -1,0 +1,8 @@
+{
+  "name": "meetora-api",
+  "version": "0.0.1-SNAPSHOT-fg",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts"
+}

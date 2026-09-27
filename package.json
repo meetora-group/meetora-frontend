@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "api:generate": "curl -fsSL http://localhost:8082/v3/api-docs -o /tmp/meetora-openapi.json && npx -y @openapitools/openapi-generator-cli@latest generate -i /tmp/meetora-openapi.json -g typescript-fetch -o packages/meetora-api --skip-validate-spec",
+    "api:refresh": "npm run api:generate && npm install"
   },
   "dependencies": {
+    "meetora-api": "file:packages/meetora-api",
     "next": "16.2.11",
     "react": "19.2.4",
     "react-dom": "19.2.4"
